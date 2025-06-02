@@ -1,7 +1,4 @@
 ## 📦 MERN Stack Blogging Project Notes
-
-<!-- Ritesh47896 -->
-
 ---
 
 ### 🛠️ **1. Setting Up the Project**
