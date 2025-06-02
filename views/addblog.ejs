@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Add Blog</title>
+        <%- include('./partials/styles.ejs') %>
+    </head>
+    <body>
+        <%- include('./partials/dashboard.ejs') %>
+        <div class="user-blog">
+            <h1>Add Blog</h1>
+            <form action="/createBlog" method="POST">
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="body" placeholder="Content" required></textarea>
+                <button type="submit">Add Blog</button>
+                <% if (message) { %>
+                 <p class="message success"><%= message %></p>
+                 <% } %>
+     
+                 <% if (error) { %>
+                 <p class="message error"><%= error %></p>
+                 <% } %>
+            </form>
+        </div>
+    </body>
+</html>

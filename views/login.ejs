@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkFlare - Login</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <%- include('./partials/styles.ejs') %>
+</head>
+<body>
+    <div style="min-height: 100vh; display: flex; justify-content: center; align-items: center; background: #f0f2f5;">
+        <div class="container">
+            <h1 class="title">Login to ThinkFlare</h1>
+    
+            <form method="POST" action="/login" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+    
+                <!-- Show success message -->
+                <% if (message) { %>
+                    <p class="message success"><%= message %></p>
+                <% } %>
+    
+                <!-- Show error message -->
+                <% if (error) { %>
+                    <p class="message error"><%= error %></p>
+                <% } %>
+            </form>
+    
+            <div class="redirect">
+                <p>Don't have an account? <a href="/signup">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

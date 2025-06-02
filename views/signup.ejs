@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <title>🔥ThinkFlare - Signup</title>
+    <%- include('./partials/styles.ejs') %>
+</head>
+<body>
+     <div style="min-height: 100vh; display: flex; justify-content: center; align-items: center; background: #f0f2f5;">
+         <div class="container">
+             <h1 class="title">Signup to 🔥ThinkFlare</h1>
+             <form method="POST" action="/register" class="signup-form">
+                 <div class="form-group">
+                     <label for="name">Name:</label>
+                     <input type="text" id="name" name="name" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="password">Password:</label>
+                     <input type="password" id="password" name="password" required>
+                 </div>
+                 <button type="submit" class="submit-btn">Signup</button>
+     
+                 <% if (message) { %>
+                 <p class="message success"><%= message %></p>
+                 <% } %>
+     
+                 <% if (error) { %>
+                 <p class="message error"><%= error %></p>
+                 <% } %>
+             </form>
+     
+             <div class="redirect">
+                 <p>Already have an account? <a href="/login">Login here</a></p>
+             </div>
+         </div>
+     </div>
+</body>
+</html>

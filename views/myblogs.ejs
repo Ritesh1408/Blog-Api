@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>My Blogs</title>
+        <%- include('./partials/styles.ejs') %>
+    </head>
+    <body>
+        <%- include('./partials/dashboard.ejs') %>
+        <a href="/addblog" class="addblog-btn">Add blog +</a>
+        <% if (message) { %>
+                 <p class="message success"><%= message %></p>
+        <% } %>
+        <% 
+            if (blogData.length > 0) {
+                for(let i = 0; i < blogData.length; i++) {
+         %>
+            <div class="blog-card">
+                <div class="blog-title"><%= blogData[i].title %></div>
+                <div class="blog-content"><%= blogData[i].body %></div>
+                <div class="blog-actions">
+                    <a type="submit" class="edit-btn" href="/editblog?blogId=<%= blogData[i]._id %>">Edit</a>
+                    <a type="submit" class="delete-btn" href="/deleteblog?blogId=<%= blogData[i]._id %>">Delete</a>
+                </div>
+            </div>
+        <% } } %>
+    </body>
+</html>
